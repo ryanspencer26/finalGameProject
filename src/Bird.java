@@ -7,8 +7,7 @@ public class Bird {
     private int yVel;
     public final static int x = 250;
     private int y;
-
-    private boolean game;
+    private boolean gameOver;
 
     public Bird(int y){
 
@@ -16,19 +15,13 @@ public class Bird {
         size = 15;
         yVel = 5;
         color = Color.ORANGE;
-        game = true;
+        gameOver = false;
 
     }
 
-    public void setSize(int size){
+    public boolean isGameOver(){
 
-        this.size = size;
-
-    }
-
-    public void setColor(Color color){
-
-        this.color = color;
+        return gameOver;
 
     }
 
@@ -41,13 +34,12 @@ public class Bird {
 
     public void fall(int height){
 
-        yVel = 5;
         y += yVel;
+        yVel++;
 
-        if(y >= height){
+        if(y >= height - size || y <= 0){
 
-            yVel = 0;
-            game = false;
+            gameOver = true;
 
         }
 
@@ -55,13 +47,13 @@ public class Bird {
 
     public void jump(){
 
-        yVel = -20;
+        yVel = -15;
         y += yVel;
 
         if(y <= 0){
 
-            yVel = 0;
-            game = false;
+            y = 0;
+            gameOver = true;
 
         }
 

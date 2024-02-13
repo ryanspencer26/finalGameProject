@@ -8,7 +8,7 @@ public class Main extends JPanel {
     public static void main(String[] args) {
 
         JFrame frame = new JFrame();
-        frame.setSize(500, 500);
+        frame.setSize(700, 700);
         frame.setLocation(0, 0);
 
         MyPanel panel = new MyPanel();
