@@ -5,7 +5,7 @@ public class Bird {
     private int size;
     private Color color;
     private int yVel;
-    public final static int x = 250;
+    public final static int X = 250;
     private int y;
     private boolean gameOver;
 
@@ -25,10 +25,22 @@ public class Bird {
 
     }
 
+    public int getY(){
+
+        return y;
+
+    }
+
+    public int getSize(){
+
+        return size;
+
+    }
+
     public void draw(Graphics g){
 
         g.setColor(color);
-        g.fillOval(x,y,size,size);
+        g.fillOval(X,y,size,size);
 
     }
 

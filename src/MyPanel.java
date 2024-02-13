@@ -21,13 +21,11 @@ public class MyPanel extends JPanel {
 
     public void newWalls(){
 
-        do{
             for(int i = 0; i < walls.length; i++){
 
                 walls[i] = new Wall(getWidth(), getHeight(), i);
 
             }
-        }while(false);
 
     }
 
@@ -45,13 +43,19 @@ public class MyPanel extends JPanel {
         if(walls[0].getX() <= (-1 * Wall.WIDTH)){
             newWalls();
         }
+        if((walls[0].getX() - 250 >= 0) && (walls[0].getX() - 250 <= Wall.WIDTH)){
+            if((flappy.getY() <= walls[0].getHeight()) || (flappy.getY() + flappy.getSize() >= walls[1].getY())){
+                JOptionPane.showMessageDialog(null, "GAME OVER");
+                System.exit(0);
+            }
+        }
         if(flappy.isGameOver()){
             JOptionPane.showMessageDialog(null, "GAME OVER");
             System.exit(0);
         }
 
         try {
-            Thread.sleep(25);
+            Thread.sleep(15);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

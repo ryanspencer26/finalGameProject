@@ -13,14 +13,14 @@ public class Wall {
 
     public Wall(int fWidth, int fHeight, int topBottom){
 
+        height = (int)(Math.random() * 200 + 100);
         if(topBottom == 0){
             y = 0;
         } else {
-            y = fHeight;
+            y = fHeight - this.height;
         }
         x = fWidth;
         xVel = -2;
-        height = (int)(Math.random() * 200 + 100);
 
     }
 
