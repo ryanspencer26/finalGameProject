@@ -4,18 +4,17 @@ public class Bird {
 
     private int size;
     private Color color;
-    private int ySpeed;
-    private int x;
+    private int yVel;
+    public final static int x = 250;
     private int y;
 
     private boolean game;
 
-    public Bird(int x, int y){
+    public Bird(int y){
 
-        this.x = x;
         this.y = y;
         size = 15;
-        ySpeed = 5;
+        yVel = 5;
         color = Color.ORANGE;
         game = true;
 
@@ -40,13 +39,28 @@ public class Bird {
 
     }
 
-    public void jump(int height){
+    public void fall(int height){
 
-        y += ySpeed;
+        yVel = 5;
+        y += yVel;
 
-        if(y >= height - size || y<= 0){
+        if(y >= height){
 
-            ySpeed = 0;
+            yVel = 0;
+            game = false;
+
+        }
+
+    }
+
+    public void jump(){
+
+        yVel = -20;
+        y += yVel;
+
+        if(y <= 0){
+
+            yVel = 0;
             game = false;
 
         }

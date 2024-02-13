@@ -3,11 +3,17 @@ import java.awt.*;
 
 public class MyPanel extends JPanel {
 
-    Bird flappy = new Bird(250, 250);
+    public Bird flappy = new Bird(250);
 
     public MyPanel() {
 
-        setBackground(Color.LIGHT_GRAY);
+        setBackground(Color.CYAN);
+
+    }
+
+    public Bird getBird(){
+
+        return flappy;
 
     }
 
@@ -17,7 +23,7 @@ public class MyPanel extends JPanel {
         super.paintComponent(g);
 
         flappy.draw(g);
-        flappy.jump(getHeight());
+        flappy.fall(getHeight());
 
         try {
             Thread.sleep(25);
