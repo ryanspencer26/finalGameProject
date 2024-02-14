@@ -21,9 +21,9 @@ public class MyPanel extends JPanel {
 
     public void newWalls(){
 
-            for(int i = 0; i < walls.length; i++){
+            for(int i = 0; i < 2; i++){
 
-                walls[i] = new Wall(getWidth(), getHeight(), i);
+                walls[i] = new Wall(Main.frameSize, Main.frameSize, i);
 
             }
 
@@ -42,7 +42,7 @@ public class MyPanel extends JPanel {
             newWalls();
             flappy.addScore();
         }
-        if(((walls[0].getX() + Wall.WIDTH - Bird.X) >= 0) && ((walls[0].getX() + Wall.WIDTH - Bird.X) <= Wall.WIDTH)){
+        if((walls[0].getX() <= Bird.X + Bird.SIZE) && (walls[0].getX() + Wall.WIDTH >= Bird.X)){
             if((flappy.getY() <= walls[0].getHeight()) || (flappy.getY() + Bird.SIZE >= walls[1].getY())){
                 JOptionPane.showMessageDialog(null, "GAME OVER");
                 System.exit(0);

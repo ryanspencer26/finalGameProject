@@ -13,14 +13,22 @@ public class Wall {
 
     public Wall(int fWidth, int fHeight, int topBottom){
 
-        height = (int)(Math.random() * 200 + 100);
+        height = (int)(Math.random() * 125 + 200);
         if(topBottom == 0){
             y = 0;
         } else {
-            y = fHeight - this.height;
+            y = fHeight - height;
         }
         x = fWidth;
-        xVel = -2;
+        if(Bird.score >= 290){
+            xVel = -20;
+        } else if(Bird.score >= 190){
+            xVel = -15;
+        } else if(Bird.score >= 90){
+            xVel = -10;
+        } else {
+            xVel = -5;
+        }
 
     }
 

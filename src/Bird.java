@@ -61,7 +61,7 @@ public class Bird {
 
     public void jump(){
 
-        yVel = -15;
+        yVel = -13;
         y += yVel;
 
         if(y <= 0){
