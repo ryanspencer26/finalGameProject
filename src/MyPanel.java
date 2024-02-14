@@ -33,18 +33,17 @@ public class MyPanel extends JPanel {
     public void paintComponent(Graphics g) {
 
         super.paintComponent(g);
+        g.drawString("" + Bird.score, 375, 150);
 
         flappy.draw(g);
-        flappy.fall(getHeight());
         walls[0].draw(g);
         walls[1].draw(g);
-        walls[0].move();
-        walls[1].move();
         if(walls[0].getX() <= (-1 * Wall.WIDTH)){
             newWalls();
+            flappy.addScore();
         }
-        if((walls[0].getX() - 250 >= 0) && (walls[0].getX() - 250 <= Wall.WIDTH)){
-            if((flappy.getY() <= walls[0].getHeight()) || (flappy.getY() + flappy.getSize() >= walls[1].getY())){
+        if(((walls[0].getX() + Wall.WIDTH - Bird.X) >= 0) && ((walls[0].getX() + Wall.WIDTH - Bird.X) <= Wall.WIDTH)){
+            if((flappy.getY() <= walls[0].getHeight()) || (flappy.getY() + Bird.SIZE >= walls[1].getY())){
                 JOptionPane.showMessageDialog(null, "GAME OVER");
                 System.exit(0);
             }
@@ -53,6 +52,10 @@ public class MyPanel extends JPanel {
             JOptionPane.showMessageDialog(null, "GAME OVER");
             System.exit(0);
         }
+
+        flappy.fall(getHeight());
+        walls[0].move();
+        walls[1].move();
 
         try {
             Thread.sleep(15);

@@ -2,20 +2,22 @@ import java.awt.*;
 
 public class Bird {
 
-    private int size;
+    public final static int SIZE = 15;
     private Color color;
     private int yVel;
     public final static int X = 250;
     private int y;
     private boolean gameOver;
 
+    public static int score;
+
     public Bird(int y){
 
         this.y = y;
-        size = 15;
-        yVel = 5;
         color = Color.ORANGE;
+        yVel = 5;
         gameOver = false;
+        score = 0;
 
     }
 
@@ -25,22 +27,22 @@ public class Bird {
 
     }
 
+    public void addScore(){
+
+        score += 10;
+
+    }
+
     public int getY(){
 
         return y;
 
     }
 
-    public int getSize(){
-
-        return size;
-
-    }
-
     public void draw(Graphics g){
 
         g.setColor(color);
-        g.fillOval(X,y,size,size);
+        g.fillOval(X,y,SIZE,SIZE);
 
     }
 
@@ -49,7 +51,7 @@ public class Bird {
         y += yVel;
         yVel++;
 
-        if(y >= height - size || y <= 0){
+        if(y >= height - SIZE || y <= 0){
 
             gameOver = true;
 
