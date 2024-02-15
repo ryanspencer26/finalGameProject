@@ -33,11 +33,12 @@ public class MyPanel extends JPanel {
     public void paintComponent(Graphics g) {
 
         super.paintComponent(g);
-        g.drawString("" + Bird.score, 375, 150);
 
         flappy.draw(g);
         walls[0].draw(g);
         walls[1].draw(g);
+        g.setColor(Color.BLACK);
+        g.drawString("" + Bird.score, 375, 150);
 
         if(walls[0].getX() <= (-1 * Wall.WIDTH)){
 
@@ -69,8 +70,9 @@ public class MyPanel extends JPanel {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+
         repaint();
 
-    }
+        }
 
 }
