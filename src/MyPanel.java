@@ -38,19 +38,26 @@ public class MyPanel extends JPanel {
         flappy.draw(g);
         walls[0].draw(g);
         walls[1].draw(g);
+
         if(walls[0].getX() <= (-1 * Wall.WIDTH)){
+
             newWalls();
             flappy.addScore();
+
         }
         if((walls[0].getX() <= Bird.X + Bird.SIZE) && (walls[0].getX() + Wall.WIDTH >= Bird.X)){
             if((flappy.getY() <= walls[0].getHeight()) || (flappy.getY() + Bird.SIZE >= walls[1].getY())){
+
                 JOptionPane.showMessageDialog(null, "GAME OVER");
                 System.exit(0);
+
             }
         }
         if(flappy.isGameOver()){
+
             JOptionPane.showMessageDialog(null, "GAME OVER");
             System.exit(0);
+
         }
 
         flappy.fall(getHeight());
