@@ -2,7 +2,7 @@ import java.awt.*;
 
 public class Bird {
 
-    public final static int SIZE = 15;
+    public final static int SIZE = 25;
     private Color color;
     private int yVel;
     public final static int X = 250;
@@ -29,7 +29,7 @@ public class Bird {
 
     public void addScore(){
 
-        score += 10;
+        score += 1;
 
     }
 

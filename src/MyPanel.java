@@ -37,15 +37,15 @@ public class MyPanel extends JPanel {
         flappy.draw(g);
         walls[0].draw(g);
         walls[1].draw(g);
-        g.setColor(Color.BLACK);
-        g.drawString("" + Bird.score, 375, 150);
-
         if(walls[0].getX() <= (-1 * Wall.WIDTH)){
 
             newWalls();
             flappy.addScore();
 
         }
+        g.setColor(Color.BLACK);
+        g.drawString("" + Bird.score, 375, 150);
+
         if((walls[0].getX() <= Bird.X + Bird.SIZE) && (walls[0].getX() + Wall.WIDTH >= Bird.X)){
             if((flappy.getY() <= walls[0].getHeight()) || (flappy.getY() + Bird.SIZE >= walls[1].getY())){
 

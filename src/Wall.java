@@ -3,7 +3,7 @@ import java.awt.*;
 public class Wall {
 
     private int x;
-    public final static int WIDTH = 50;
+    public final static int WIDTH = 75;
     private int y;
     private int height;
     private final Color COLOR = Color.GREEN;
@@ -13,19 +13,25 @@ public class Wall {
 
     public Wall(int fWidth, int fHeight, int topBottom){
 
-        height = (int)(Math.random() * 125 + 200);
+        height = (int)(Math.random() * 100 + 215);
         if(topBottom == 0){
             y = 0;
         } else {
             y = fHeight - height;
         }
         x = fWidth;
-        if(Bird.score >= 290){
+        if(Bird.score >= 29){
             xVel = -20;
-        } else if(Bird.score >= 190){
+        } else if(Bird.score >= 24){
+            xVel = -18;
+        } else if(Bird.score >= 19){
             xVel = -15;
-        } else if(Bird.score >= 90){
+        } else if(Bird.score >= 14){
+            xVel = -13;
+        } else if(Bird.score >= 9){
             xVel = -10;
+        } else if(Bird.score >= 4){
+            xVel = -8;
         } else {
             xVel = -5;
         }
