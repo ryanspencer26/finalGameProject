@@ -10,9 +10,12 @@ public class Main extends JPanel {
 
     public static void main(String[] args) {
 
-        JFrame frame = new JFrame("Flappy Ball Java Edition");
+        JFrame frame = new JFrame("Flappy Bron Java Edition");
         frame.setSize(frameSize, frameSize);
         frame.setLocationRelativeTo(null);
+
+        JPanel menu = new JPanel();
+        //build menu
 
         MyPanel panel = new MyPanel();
         panel.setBackground(Color.CYAN);

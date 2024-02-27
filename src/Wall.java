@@ -3,7 +3,7 @@ import java.awt.*;
 public class Wall {
 
     private int x;
-    public final static int WIDTH = 133;
+    public final static int WIDTH = 125;
     private int y;
     private int height;
     private final Color COLOR = Color.GREEN;
@@ -13,7 +13,7 @@ public class Wall {
 
     public Wall(int fWidth, int fHeight, int topBottom){
 
-        height = (int)(Math.random() * 125 + 150);
+        height = (int)(Math.random() * 125 + 175);
         if(topBottom == 0){
             y = 0;
         } else {
