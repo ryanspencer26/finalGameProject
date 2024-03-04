@@ -6,16 +6,12 @@ import java.awt.event.KeyListener;
 public class Main extends JPanel {
 
     public static int frameSize = 750;
-    public static boolean start = false;
 
     public static void main(String[] args) {
 
         JFrame frame = new JFrame("Flappy Bron Java Edition");
         frame.setSize(frameSize, frameSize);
         frame.setLocationRelativeTo(null);
-
-        JPanel menu = new JPanel();
-        //build menu
 
         MyPanel panel = new MyPanel();
         panel.setBackground(Color.CYAN);
