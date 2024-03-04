@@ -61,7 +61,7 @@ public class MyPanel extends JPanel {
 
         }
 
-        flappy.fall(getHeight());
+        flappy.fall(Main.frameSize);
         walls[0].move();
         walls[1].move();
 
