@@ -6,14 +6,13 @@ import java.awt.event.KeyListener;
 public class Main extends JPanel {
 
     public static int frameSize = 750;
-    public static boolean game = false;
 
     public static void main(String[] args) {
 
         JFrame frame = new JFrame("Flappy Bron Java Edition");
         frame.setSize(frameSize, frameSize);
         frame.setLocationRelativeTo(null);
-        
+
         MyPanel panel = new MyPanel();
         frame.add(panel);
 
