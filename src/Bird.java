@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class Bird {
 
-    public final static int SIZE = 66;
+    public final static int SIZE = 50;
     private Color color;
     private int yVel;
     public final static int X = 250;

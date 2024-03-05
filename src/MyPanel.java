@@ -8,7 +8,7 @@ public class MyPanel extends JPanel {
 
     public MyPanel() {
 
-        setBackground(Color.CYAN);
+        setBackground(new Color(135, 220, 235));
         newWalls();
 
     }
@@ -44,7 +44,8 @@ public class MyPanel extends JPanel {
 
         }
         g.setColor(Color.BLACK);
-        g.drawString("" + Bird.score, 375, 150);
+        g.setFont(new Font("SansSerif", Font.PLAIN, 75));
+        g.drawString("" + Bird.score, 325, 150);
 
         if((walls[0].getX() <= Bird.X + Bird.SIZE) && (walls[0].getX() + Wall.WIDTH >= Bird.X)){
             if((flappy.getY() <= walls[0].getHeight()) || (flappy.getY() + Bird.SIZE >= walls[1].getY())){

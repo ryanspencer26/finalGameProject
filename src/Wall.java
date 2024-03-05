@@ -3,17 +3,18 @@ import java.awt.*;
 public class Wall {
 
     private int x;
-    public final static int WIDTH = 125;
+    public final static int WIDTH = 100;
     private int y;
     private int height;
-    private final Color COLOR = Color.GREEN;
+    private Color color;
     private int xVel;
 
 
 
     public Wall(int fWidth, int fHeight, int topBottom){
 
-        height = (int)(Math.random() * 125 + 175);
+        height = (int)(Math.random() * 115 + 200);
+        color = new Color(76, 210, 12);
         if(topBottom == 0){
             y = 0;
         } else {
@@ -58,7 +59,7 @@ public class Wall {
 
     public void draw(Graphics g){
 
-        g.setColor(COLOR);
+        g.setColor(color);
         g.fillRect(x,y,WIDTH, height);
 
     }
