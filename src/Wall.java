@@ -13,7 +13,7 @@ public class Wall {
 
     public Wall(int fWidth, int fHeight, int topBottom){
 
-        height = (int)(Math.random() * 115 + 200);
+        height = (int)(Math.random() * 100 + 200);
         color = new Color(76, 210, 12);
         if(topBottom == 0){
             y = 0;

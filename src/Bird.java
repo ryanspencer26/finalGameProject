@@ -4,10 +4,8 @@ import java.awt.*;
 public class Bird {
 
     public final static int SIZE = 50;
-    private Color color;
     private int yVel;
     public final static int X = 250;
-
     public final static ImageIcon pic = new ImageIcon("Images/kingJamesCropped.png");
     private int y;
     private boolean gameOver;
@@ -17,7 +15,6 @@ public class Bird {
     public Bird(int y){
 
         this.y = y;
-        color = Color.ORANGE;
         yVel = 5;
         gameOver = false;
         score = 0;
@@ -44,8 +41,6 @@ public class Bird {
 
     public void draw(Graphics g){
 
-        g.setColor(color);
-//        g.fillOval(X,y,SIZE,SIZE);
         g.drawImage(pic.getImage(),X,y,SIZE, SIZE, null);
 
     }
