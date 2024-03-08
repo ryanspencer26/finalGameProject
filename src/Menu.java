@@ -31,6 +31,9 @@ public class Menu extends JPanel{
             g.setColor(Color.BLACK);
             int textWidth3 = g.getFontMetrics().stringWidth("Quit");
             g.drawString("Quit", (375 - textWidth3 / 2), 500);
+            g.setFont(new Font("SansSerif", Font.ITALIC, 15));
+            int textWidth4 = g.getFontMetrics().stringWidth("Use up/down/enter keys to navigate menu");
+            g.drawString("Use up/down/enter keys to navigate menu", (375 - textWidth4 / 2), 250);
 
         } else if(!start && quit) {
 
@@ -45,6 +48,9 @@ public class Menu extends JPanel{
             int textWidth3 = g.getFontMetrics().stringWidth("Quit");
             g.drawString("Quit", (375 - textWidth3 / 2), 500);
             g.setColor(Color.BLACK);
+            g.setFont(new Font("SansSerif", Font.ITALIC, 15));
+            int textWidth4 = g.getFontMetrics().stringWidth("Use up/down/enter keys to navigate menu");
+            g.drawString("Use up/down/enter keys to navigate menu", (375 - textWidth4 / 2), 250);
 
         }
 
