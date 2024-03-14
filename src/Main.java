@@ -15,6 +15,7 @@ public class Main extends JPanel {
         JFrame gameFrame = new JFrame("Flappy Bron Java Edition");
         gameFrame.setSize(frameSize, frameSize);
         gameFrame.setLocationRelativeTo(null);
+        gameFrame.setResizable(false);
 
         MyPanel panel = new MyPanel();
         gameFrame.add(panel);
@@ -22,6 +23,7 @@ public class Main extends JPanel {
         JFrame menuFrame = new JFrame("Flappy Bron Java Edition");
         menuFrame.setSize(frameSize, frameSize);
         menuFrame.setLocationRelativeTo(null);
+        menuFrame.setResizable(false);
 
         Menu menu = new Menu();
         menuFrame.add(menu);

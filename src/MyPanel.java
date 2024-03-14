@@ -6,6 +6,8 @@ public class MyPanel extends JPanel {
     public Bird flappy = new Bird(350);
     public Wall[] walls = new Wall[2];
 
+    public final static ImageIcon background = new ImageIcon("Images/flappyBackground2.png");
+
     public MyPanel() {
 
         setBackground(new Color(135, 220, 235));
@@ -33,6 +35,8 @@ public class MyPanel extends JPanel {
     public void paintComponent(Graphics g) {
 
         super.paintComponent(g);
+
+        g.drawImage(background.getImage(),0,0,null);
 
         flappy.draw(g);
         walls[0].draw(g);
