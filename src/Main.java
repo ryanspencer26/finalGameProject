@@ -88,7 +88,7 @@ public class Main extends JPanel {
 
                         System.out.println("space");
                         panel.getBird().jump();
-                        jumps++;
+                        jumps += 1;
 
                     }
 
