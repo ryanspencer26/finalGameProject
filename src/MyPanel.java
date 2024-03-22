@@ -3,10 +3,12 @@ import java.awt.*;
 
 public class MyPanel extends JPanel {
 
-    public Bird flappy = new Bird(350);
+    public Bird flappy = new Bird();
     public Wall[] walls = new Wall[2];
 
-    public final static ImageIcon background = new ImageIcon("Images/flappyBackground2.png");
+    public boolean newGame = false;
+
+    private final static ImageIcon background = new ImageIcon("Images/flappyBackground2.png");
 
     public MyPanel() {
 
@@ -37,6 +39,15 @@ public class MyPanel extends JPanel {
         super.paintComponent(g);
 
         g.drawImage(background.getImage(),0,0,null);
+
+        if(newGame){
+
+            flappy = new Bird();
+            newWalls();
+            Main.jumps = 0;
+            newGame = false;
+
+        }
 
         flappy.draw(g);
         walls[0].draw(g);
@@ -71,8 +82,19 @@ public class MyPanel extends JPanel {
         }
         if(flappy.isGameOver()){
 
-            JOptionPane.showMessageDialog(null, "GAME OVER");
-            System.exit(0);
+            int again = JOptionPane.showConfirmDialog(null, "New game?", "Game Over", JOptionPane.YES_NO_OPTION);
+
+            if(again == JOptionPane.YES_OPTION){
+
+                flappy.gameOver = false;
+                newGame = true;
+                setFocusable(true);
+
+            } else {
+
+                System.exit(0);
+
+            }
 
         }
         if(Main.jumps != 0){

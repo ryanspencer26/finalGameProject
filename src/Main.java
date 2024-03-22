@@ -86,6 +86,7 @@ public class Main extends JPanel {
 
                     if(e.getKeyCode() == KeyEvent.VK_SPACE){
 
+                        System.out.println("space");
                         panel.getBird().jump();
                         jumps++;
 

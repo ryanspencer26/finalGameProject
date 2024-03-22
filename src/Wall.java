@@ -4,17 +4,16 @@ public class Wall {
 
     private int x;
     public final static int WIDTH = 100;
-    private int y;
-    private int height;
-    private Color color;
-    private int xVel;
+    private final int y;
+    private final int height;
+    private final Color color = new Color(76, 210, 12);
+    private final int xVel;
 
 
 
     public Wall(int fWidth, int fHeight, int topBottom){
 
         height = (int)(Math.random() * 100 + 200);
-        color = new Color(76, 210, 12);
         if(topBottom == 0){
             y = 0;
         } else {

@@ -8,13 +8,13 @@ public class Bird {
     public final static int X = 250;
     public final static ImageIcon pic = new ImageIcon("Images/kingJamesCropped.png");
     private int y;
-    private boolean gameOver;
+    public boolean gameOver;
 
     public static int score;
 
-    public Bird(int y){
+    public Bird(){
 
-        this.y = y;
+        y = 350;
         yVel = 5;
         gameOver = false;
         score = 0;
